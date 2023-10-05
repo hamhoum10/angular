@@ -1,0 +1,25 @@
+
+<table >
+  <thead>
+<tr class="user-list">
+  <th>Index</th>
+  <th>ID</th>
+  <th>first Name</th>
+</tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let u of list; let j=index">
+    <td>**{{j}}**</td>
+    <td>{{u.id}}</td>
+    <td>{{u.firstName}}</td>
+    <td><img class="superbox-img" [src]="u.picture "></td>
+
+<!--    **{{j}}**  {{u.id}} - {{u.firstName}} - <img [src]="u.picture">-->
+    <button [disabled]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
+    <button *ngIf="u.accountCategory != 'Admin'" (click)="delete(j)" >Delete</button>
+    <button [hidden]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
+  </tr>
+  </tbody>
+
+
+</table>
