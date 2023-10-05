@@ -1,25 +1,44 @@
+<link href="list-user.component.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="main-box clearfix">
+        <div class="table-responsive">
+          <table class="table user-list">
+            <thead>
+            <tr  >
+              <th><span>User</span></th>
 
-<table >
-  <thead>
-<tr class="user-list">
-  <th>Index</th>
-  <th>ID</th>
-  <th>first Name</th>
-</tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let u of list; let j=index">
-    <td>**{{j}}**</td>
-    <td>{{u.id}}</td>
-    <td>{{u.firstName}}</td>
-    <td><img class="superbox-img" [src]="u.picture "></td>
+              <th class="text-center"><span>id</span></th>
+              <th><span>delet</span></th>
+              <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let u of list; let j=index">
+              <td>
+                <img [src]="u.picture">
+                <a href="#" class="user-link">{{u.firstName}}</a>
+                <span class="user-subhead">**{{j}}**</span>
+              </td>
 
-<!--    **{{j}}**  {{u.id}} - {{u.firstName}} - <img [src]="u.picture">-->
-    <button [disabled]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
-    <button *ngIf="u.accountCategory != 'Admin'" (click)="delete(j)" >Delete</button>
-    <button [hidden]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
-  </tr>
-  </tbody>
+              <td class="text-center">
+                <span class="label label-default">{{u.id}}</span>
+              </td>
+              <td>
+                <a href="#"><button [disabled]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
+                  <button *ngIf="u.accountCategory != 'Admin'" (click)="delete(j)" >Delete</button>
+                  <button [hidden]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button></a>
+              </td>
+
+            </tr>
 
 
-</table>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

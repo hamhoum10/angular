@@ -68,4 +68,9 @@ export class ListUserComponent {
     this.list.splice(pos,1);
   }
 
+
+
+
+
+
 }
