@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AccountListComponent } from './account-list/account-list.component';
 import { SlideComponent } from './slide/slide.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SlideComponent } from './slide/slide.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

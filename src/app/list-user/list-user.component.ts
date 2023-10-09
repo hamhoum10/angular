@@ -67,6 +67,7 @@ export class ListUserComponent {
   delete(pos:number){
     this.list.splice(pos,1);
   }
+  category : string="";
 
 
 
